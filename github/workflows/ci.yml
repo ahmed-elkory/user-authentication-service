@@ -1,23 +1,19 @@
-name: Spring Boot CI
+name: Java CI with Maven
 
 on:
   push:
-    branches:
-      - master
-
+    branches: [ "master" ]
   pull_request:
-    branches:
-      - master
+    branches: [ "master" ]
 
 jobs:
-
   build:
 
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: Checkout project
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up JDK 21
@@ -32,7 +28,7 @@ jobs:
       - name: Run tests
         run: ./mvnw test
 
-      - name: Build application
+      - name: Build project
         run: ./mvnw clean package -DskipTests
 
       - name: Build Docker image
