@@ -1,0 +1,73 @@
+<!--
+    Email Template: Account Activation Email
+
+    Purpose:
+    This Thymeleaf template is used to generate HTML emails for user account activation
+    during the registration process.
+
+    Dynamic Variables:
+    - ${name} : Recipient's first name (personalization)
+    - ${link} : Unique email verification URL
+
+    Usage:
+    Rendered by EmailTemplateService and sent via EmailService when a user registers.
+    The email contains a time-limited activation link to confirm the user's account.
+
+    Notes:
+    - Designed for SMTP HTML emails
+    - Must remain lightweight and email-client compatible
+-->
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Activation</title>
+</head>
+
+<body style="margin:0; padding:0; background-color:#f4f6f8; font-family:Arial, sans-serif;">
+
+<div style="max-width:600px; margin:40px auto; background:#ffffff; padding:30px; border-radius:10px;
+            box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+
+    <h2 style="color:#333;">
+        Hi <span th:text="${name}" style="color:#4CAF50;"></span>,
+    </h2>
+
+    <p style="font-size:16px; color:#555; line-height:1.5;">
+        Thanks for registering. We’re excited to have you on board.
+    </p>
+
+    <p style="font-size:16px; color:#555;">
+        Please activate your account by clicking the button below:
+    </p>
+
+    <div style="text-align:center; margin:30px 0;">
+        <a th:href="${link}"
+           style="background-color:#4CAF50;
+                  color:white;
+                  padding:12px 28px;
+                  text-decoration:none;
+                  font-size:16px;
+                  border-radius:6px;
+                  display:inline-block;
+                  font-weight:bold;">
+            Activate Account
+        </a>
+    </div>
+
+    <p style="font-size:14px; color:#888;">
+        ⚠️ This link will expire in <strong>15 minutes</strong>.
+    </p>
+
+    <hr style="border:none; border-top:1px solid #eee; margin:25px 0;">
+
+    <p style="font-size:12px; color:#aaa; text-align:center;">
+        If you did not create this account, you can safely ignore this email.
+    </p>
+
+</div>
+
+</body>
+</html>
