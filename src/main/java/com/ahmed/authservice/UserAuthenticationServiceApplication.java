@@ -18,6 +18,5 @@ public class UserAuthenticationServiceApplication {
 			app.addInitializers(new DotenvInitializer());
 		}
 		app.run(args);
-
 	}
 }
