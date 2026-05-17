@@ -196,11 +196,17 @@ The repository includes a complete Postman collection for testing all authentica
 * Protected Endpoints
 * Role-Based Access Testing
 
-## Postman Preview
+## 🖼️ Postman Preview
 
 ![Postman Collection](docs/images/postman-auth.png)
 
-## Collection Location
+---
+
+## 📥 Download Collection
+
+👉 [Download Postman Collection](docs/postman/user-authentication-service.postman_collection.json)
+
+Or locate it in the project:
 
 ```bash
 docs/postman/user-authentication-service.postman_collection.json
@@ -227,7 +233,7 @@ docs/postman/user-authentication-service.postman_collection.json
 ## 1. Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/user-authentication-service.git
+git clone https://github.com/ahmed-elkory/user-authentication-service.git
 
 cd user-authentication-service
 ```
